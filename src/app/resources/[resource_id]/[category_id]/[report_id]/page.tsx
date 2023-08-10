@@ -51,7 +51,7 @@ const ResourceCategoryReportItem = ({ id, type, title }: { id: number, type: str
 
 
 
-const icons = {
+const icons: { [key: string]: React.ReactNode } = {
   'presentation': <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
     <path d="M15.487 1H1V12.5503H15.487V1Z" stroke="#003854" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
     <path d="M8.36188 12.5503L3.27686 16.74" stroke="#003854" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
