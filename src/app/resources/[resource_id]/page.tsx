@@ -12,7 +12,7 @@ export default function Resources({
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
   const { resource_id } = params
-  const currentResource = resources.find(resource => resource.id === parseInt(resource_id || '0', 10))
+  const currentResource = resources.find(resource => resource.id === parseInt(resource_id || '0', 10)) || { id: 1, title: "Test", data: [] }
   return (<div className='flex gap-11'>
     <div className='flex-1'>
       <div className="flex flex-col gap-10">
@@ -46,6 +46,6 @@ const ResourceItem = (resource: TResource) => <div className="flex flex-col gap-
     <div className="font-extrabold text-18.5">{resource.title}</div>
   </div>
   <div className="flex gap-8 flex-wrap">
-    {resource.data.map((category: TCategory, index:number) => <ResourceCategoryItem key={index} resource={resource} category={category} />)}
+    {resource.data.map((category: TCategory, index: number) => <ResourceCategoryItem key={index} resource={resource} category={category} />)}
   </div>
 </div>

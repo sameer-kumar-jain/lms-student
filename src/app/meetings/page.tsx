@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import { currentLiveClasses, currentMeetings, upcomingLiveClasses, upcomingMeetings } from "../../data"
 import { TMeeting } from "../../types/types"
@@ -60,7 +61,7 @@ export default function Meetings() {
 const CallItem = ({ data, type }: { data: TMeeting, type: 'current' | 'upcoming' }) => {
   return (
     <div className="bg-white rounded-md px-4 py-5 flex flex-col gap-2.5">
-      <div><img src={data.thumb} /></div>
+      <div><img src={data.thumb}  alt={data.instructor} /></div>
       <div className="font-extrabold text-16.5">Call with {data.instructor}</div>
       <TimeView />
       <DateView />
@@ -72,7 +73,7 @@ const CallItem = ({ data, type }: { data: TMeeting, type: 'current' | 'upcoming'
 const ClassItem = ({ data, type }: { data: TMeeting, type: 'current' | 'upcoming' }) => {
   return (
     <div className="bg-white rounded-md flex flex-col w-225">
-      <div><img src={data.thumb} /></div>
+      <div><img src={data.thumb}  alt={data.instructor} /></div>
       <div className="p-5 flex flex-col gap-2.5">
         <div className="font-extrabold text-16.5">Call with {data.instructor}</div>
         <TimeView />

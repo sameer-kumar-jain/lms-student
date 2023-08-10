@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { myCourses } from '../../../data'
 import Heading from '../../../components/heading'
@@ -61,7 +62,7 @@ export default function CoursePage({
         </div>
         <div className='pt-6'>
           <RadiusBox>
-            <img className='w-full' src='/assets/images/video.png' />
+            <img className='w-full' src='/assets/images/video.png'  alt={currentCourse?.title} />
             <div className='p-8'>
               <div className='font-bold text-18.5'>Overview Video Presentation</div>
               <div className='pt-3 font-light text-black leading-7'>This video will help you learn about the objective of this course. Why you need it? How it will help you? What concepts are covered in? And, at last how will you get benefited by using it</div>

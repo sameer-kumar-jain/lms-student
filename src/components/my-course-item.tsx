@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { TMyCourseItem } from '../types/types'
 import PendingCourseProgress from './pending-course-progress'
@@ -6,7 +7,7 @@ export default function MyCourseItem(props: TMyCourseItem) {
   return (
     <div className='flex gap-6 course-item'>
       <div className='w-[120px]'>
-        <img src={props.thumbnail} />
+        <img src={props.thumbnail}  alt={props.title} />
       </div>
       <div className='flex-1 flex flex-col'>
         <div className='font-bold text-base max-w-[450px]'>{props.title}</div>

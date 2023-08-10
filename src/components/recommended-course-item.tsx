@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import PendingCourseProgress from './pending-course-progress'
 import Link from 'next/link'
@@ -9,7 +10,7 @@ export default function RecommendedCourseItem(props: TMyCourseItem) {
       <Link href={`/courses/${props.id}`}>
         <div className='flex gap-2 p-2 '>
           <div className='w-[135px]'>
-            <img src={props.thumbnail} />
+            <img src={props.thumbnail} alt={props.title} />
           </div>
           <div className='flex-1 flex flex-col gap-4'>
             <div className='font-bold text-18'>{props.title}</div>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import { communities } from "../../data"
 import { TCommunity } from "../../types/types"
@@ -21,7 +22,7 @@ export default function Community() {
 const CommunityItem = ({ data }: { data: TCommunity }) => {
   return (
     <div className="bg-white rounded-md flex flex-col w-225 gap-6">
-      <div><img src={data.thumb} /></div>
+      <div><img src={data.thumb} alt={data.title} /></div>
       <div className="pl-3 text-15.5 font-extrabold">{data.title}</div>
       <div className="pl-3 flex gap-4">
         <div className="flex gap-1 items-center"><span className="text-13 font-bold">25</span><span className="text-11 text-black">Topics</span></div>

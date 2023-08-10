@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import { channelMessages, channels, currentLiveClasses, currentMeetings, upcomingLiveClasses, upcomingMeetings } from "../../data"
 import { TChannel, TMeeting, TMessage } from "../../types/types"
@@ -111,7 +112,7 @@ const ChannelMessages = () => {
     from = message.from;
     return (<div key={index} className={`flex ${from === "me" ? "flex-row-reverse" : ""} ${!sameUser ? "pt-5" : ""}`}>
       <div className="w-33 h-33">
-        {!sameUser ? <img src={message.profile_picture} /> : null}
+        {!sameUser ? <img src={message.profile_picture}  alt={message.display_name} /> : null}
       </div>
       <div className={`flex flex-1 pt-3 ${from === "me" ? "justify-end" : ""}`}>
         <div className="flex flex-col py-2 px-3 rounded-md max-w-80p" style={{ backgroundColor: from === "me" ? "#DCFFEC" : "#EAF9FF" }}>

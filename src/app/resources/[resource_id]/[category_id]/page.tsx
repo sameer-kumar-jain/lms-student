@@ -34,7 +34,7 @@ export default function ResourceCategory({
 const ResourceCategoryReportItem = ({ id, type, title }: { id: number, type: string, title: string }) => {
   return (<div className="flex flex-col bg-white rounded-md px-3 py-3 gap-2.5 w-[190px]">
     <div className="flex justify-between uppercase text-12">
-      {icons[type]}
+    {type === 'presentation' ? icons.presentation : (type === 'pdf' ? icons.pdf : icons.video)}
       {type}
     </div>
     <div className="flex justify-center items-center h-[148px]" style={{

@@ -134,7 +134,11 @@ export const resources: Array<TResource> = [{
 }]
 
 
-export const resourceCategoryItems = [{
+export const resourceCategoryItems: Array<{
+  id: number,
+  type: string,
+  title: string
+}> = [{
   id: 1,
   type: 'presentation',
   title: 'France Top 10 B-Schools for Aspiran'

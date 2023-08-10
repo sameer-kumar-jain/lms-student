@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { communities, myCourses, topics } from '../../../data'
 import Heading from '../../../components/heading'
@@ -67,7 +68,7 @@ const MyCourses = () => {
       <div className='flex flex-col p-7 gap-6'>
         {topics.map((topic: TTopic, index: number) => <div key={index} className='flex gap-6 course-item'>
           <div className='w-[100px]'>
-            <img src={topic.thumb} />
+            <img src={topic.thumb}  alt={topic.title} />
           </div>
           <div className='flex-1 flex flex-col gap-3 justify-center'>
             <div className='font-bold text-base max-w-[450px]'>{topic.title}</div>
