@@ -87,7 +87,7 @@ const CourseModuleItem = ({ title, desc, videos }: TCourseModule) => {
       <div>{title}</div>
       <div className='text-14 text-nile-blue font-light'>{desc}</div>
       <ul className='list-disc ml-5 pt-3'>
-        {videos.map(video => <li className='text-tundora'>{video.title}</li>)}
+        {videos.map(video => <li key={video.id} className='text-tundora'>{video.title}</li>)}
       </ul>
     </li>
   )

@@ -49,10 +49,10 @@ export default function Events({
     </div>
     <div className="flex gap-9">
       <div className={`flex flex-col gap-8 ${calenderView ? 'w-240' : ''}`}>
-        {Object.keys(eventDates).map((key, index) => <>
+        {Object.keys(eventDates).map((key, index) => <div key={index}>
           {index > 0 ? <SectionDivider /> : null}
           <EventDateItem key={key} date={key} data={eventDates[key]} />
-        </>)}
+        </div>)}
       </div>
       {calenderView ? <div className="flex-1 border-l-1 pl-9">
         <div className="text-16.5 font-extrabold">Events By Calendar</div>
@@ -79,9 +79,9 @@ const EventDateItem = ({ data, date }: { data: Array<TEvent>, date: string }) =>
   )
 }
 
-const EventItem = (data: TEvent) => {
+const EventItem = (data: TEvent, index:number) => {
   return (
-    <div className="rounded-md bg-white w-335 flex flex-col gap-4">
+    <div key={index} className="rounded-md bg-white w-335 flex flex-col gap-4">
       <div className="flex justify-between">
         <div className="flex gap-2 pl-4 pt-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">

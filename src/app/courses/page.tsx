@@ -6,7 +6,6 @@ import PendingCourseItem from '../../components/pending-course-item'
 import MyCourseItem from '../../components/my-course-item'
 import WhiteButton from '../../components/white-button'
 import TransparentButton from '../../components/transparent-button'
-import { pendingCourses } from '../../data/pending-courses'
 import { myCourses } from '../../data'
 
 export default function Courses() {
@@ -59,7 +58,7 @@ const MyCourses = () => {
   return <>
     <RadiusBox>
       <div className='flex flex-col p-7 gap-6'>
-        {myCourses.sort((a, b) => a.percentageComplete < b.percentageComplete ? 1 : -1).map(item => <MyCourseItem {...item} />)}
+        {myCourses.sort((a, b) => a.percentageComplete < b.percentageComplete ? 1 : -1).map(item => <MyCourseItem key={item.id} {...item} />)}
       </div>
     </RadiusBox>
   </>

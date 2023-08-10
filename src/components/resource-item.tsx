@@ -14,7 +14,7 @@ export default function ResourceItem(resource: TResource) {
 
       </div>
       <div className="flex gap-8 flex-wrap">
-        {resource.data.map((category: TCategory) => <ResourceCategoryItem resource={resource} category={category} />)}
+        {resource.data.map((category: TCategory,  index:number) => <ResourceCategoryItem key={index} resource={resource} category={category} />)}
       </div>
     </div>
   )

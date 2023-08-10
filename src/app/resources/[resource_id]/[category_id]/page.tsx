@@ -9,7 +9,7 @@ export default function ResourceCategory({
   params,
   searchParams,
 }: {
-  params: { category_id: string, resourceid: string }
+  params: { category_id: string, resource_id: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
   const {
@@ -18,11 +18,11 @@ export default function ResourceCategory({
   const currentCategory = resources.find((resource: TResource) => resource.id === parseInt(resource_id || '0', 10))?.data.find(category => category.id === parseInt(category_id || '0', 10))
   return (<div className="flex flex-col gap-7 pt-5">
     <div className="flex gap-3 items-center">
-      <div className="font-extrabold text-22">{currentCategory.title}</div>
-      <div className="font-bold text-12 text-blue-chill">{currentCategory.total}</div>
+      <div className="font-extrabold text-22">{currentCategory?.title}</div>
+      <div className="font-bold text-12 text-blue-chill">{currentCategory?.total}</div>
     </div>
     <div className="flex flex-wrap gap-7">
-      {resourceCategoryItems.map(item => <Link href={`/resources/${resource_id}/${category_id}/${item.id}`}>
+      {resourceCategoryItems.map(item => <Link key={item.id} href={`/resources/${resource_id}/${category_id}/${item.id}`}>
         <ResourceCategoryReportItem {...item} />
       </Link>
       )}

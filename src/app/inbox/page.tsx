@@ -106,10 +106,10 @@ const ChannelItem = ({ data }: { data: TChannel }) => {
 const ChannelMessages = () => {
   const messages = channelMessages;
   let from: String | null = null;
-  const getMessage = (message: TMessage) => {
+  const getMessage = (message: TMessage, index:number) => {
     const sameUser = from === message.from;
     from = message.from;
-    return (<div className={`flex ${from === "me" ? "flex-row-reverse" : ""} ${!sameUser ? "pt-5" : ""}`}>
+    return (<div key={index} className={`flex ${from === "me" ? "flex-row-reverse" : ""} ${!sameUser ? "pt-5" : ""}`}>
       <div className="w-33 h-33">
         {!sameUser ? <img src={message.profile_picture} /> : null}
       </div>

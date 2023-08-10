@@ -9,7 +9,7 @@ export default function Community() {
     <div className="flex flex-col flex-1">
       <div className="text-22 font-extrabold">25+ Communities</div>
       <div className="flex gap-5 pt-5 flex-wrap">
-        {communities.map((community: TCommunity, index: number) => <Link href={`/community/${community.id}`}>
+        {communities.map((community: TCommunity, index: number) => <Link key={index} href={`/community/${community.id}`}>
           <CommunityItem key={index} data={community} />
         </Link>)}
       </div>

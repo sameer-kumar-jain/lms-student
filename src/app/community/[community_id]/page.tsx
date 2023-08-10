@@ -65,7 +65,7 @@ const MyCourses = () => {
   return <>
     <RadiusBox>
       <div className='flex flex-col p-7 gap-6'>
-        {topics.map((topic: TTopic, index: number) => <div className='flex gap-6 course-item'>
+        {topics.map((topic: TTopic, index: number) => <div key={index} className='flex gap-6 course-item'>
           <div className='w-[100px]'>
             <img src={topic.thumb} />
           </div>
