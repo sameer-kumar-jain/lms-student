@@ -1,11 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 56, 84;
+  --background-start-rgb: 237, 254, 255;
+  --background-end-rgb: 246, 252, 255;
+  --font: Plus Jakarta Sans;
+  --color-yellow: 247, 220, 81;
+  --background-blue-chill: 12, 141, 146;
+  --background-chicago: 88, 88, 88;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +29,74 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: var(--font);
+}
+
+.page-heading {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.course-item:not(:last-child){
+  padding-bottom: 25px;
+  border-bottom: 1px solid #D5E2E2;
+}
+.btn{
+  @apply px-3 py-2 text-12.5 font-bold rounded-md
+}
+.btn.style2{
+  @apply text-blue-chill border-dashed border-1 border-blue-chill
+}
+.btn.style1{
+  @apply bg-blue-chill text-white
+}
+.btn.style3{
+  @apply border-jagged-ice border-1 text-blue-chill text-center
+}
+.btn.style4{
+  @apply border-jagged-ice border-1 text-center
+}
+
+aside {
+  @apply bg-white pt-8;
+  margin: 0;
+  width: 335px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+
+aside a {
+  @apply flex gap-7 cursor-pointer pl-20 pt-4 pb-4 rounded hover:bg-oyster-bay mr-6
+  text-15 font-medium hover:font-extrabold text-tundora;
+  text-decoration: none;
+}
+
+.content {
+  margin-left: 335px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 500px) {
+  aside {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  aside {
+    display: flex;
+  }
+  .content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  aside {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }
